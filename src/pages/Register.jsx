@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
 import {cadastro} from "../assets/js/firebase.js";
 import {useState} from "react";
+import Footer from "../components/Footer.jsx";
 
 function Register() {
     const [email, setEmail] = useState("");
@@ -34,7 +35,7 @@ function Register() {
 
     return (
         <>
-            <div className={"mt-10 container max-w-96 mx-auto px-5"}>
+            <div className={"min-h-screen mt-10 container max-w-96 mx-auto px-5"}>
                 <div className={"flex items-center w-full"}>
                     <Link to={"/"} className={""}>← Início</Link>
                 </div>
@@ -57,6 +58,7 @@ function Register() {
                     </button>
                 </form>
             </div>
+            <Footer/>
         </>
     );
 }
