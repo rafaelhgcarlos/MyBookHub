@@ -1,5 +1,11 @@
-import { initializeApp } from "firebase/app";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {initializeApp} from "firebase/app";
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    updateProfile
+} from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -12,16 +18,36 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+export const auth = getAuth(app);
 
-export function cadastro(email, password) {
+export function cadastro(email, password, displayName) {
     return createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            console.log('Usuário criado:', user);
-
+            return updateProfile(user, {displayName: displayName})
+                .then(() => {
+                    console.log('Usuário criado com nome:', user.displayName);
+                    return user;
+                });
         })
         .catch((error) => {
             console.log('Erro ao criar usuário:', error);
+            throw new Error(error.message);
         });
+}
+
+export function login(email, password) {
+    return signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log("Usuario logado:", user);
+            return userCredential;
+        })
+        .catch((error) => {
+            throw error;
+        });
+}
+
+export function logout() {
+    return signOut(auth);
 }

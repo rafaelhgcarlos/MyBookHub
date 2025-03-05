@@ -1,4 +1,4 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {cadastro} from "../assets/js/firebase.js";
 import {useState} from "react";
 import Footer from "../components/Footer.jsx";
@@ -8,11 +8,18 @@ function Register() {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
+    const [displayName, setDisplayName] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!displayName || !email || !password || !confirmPassword) {
+            setError("Todos os campos são obrigatórios.");
+            return;
+        }
 
         if (password !== confirmPassword) {
             setError("As senhas não coincidem!");
@@ -28,7 +35,11 @@ function Register() {
             setError("Por favor, insira um email válido.");
             return;
         }
-        cadastro(email, password).catch((error) => {
+
+        cadastro(email, password, displayName)
+            .then(() => {
+                navigate("/");
+            }).catch((error) => {
             setError("Erro ao criar usuário: " + error.message);
         });
     };
@@ -45,6 +56,8 @@ function Register() {
                 </div>
                 <form onSubmit={handleSubmit}
                       className={"w-full flex flex-col gap-5 justify-center items-center mt-20 "}>
+                    <input value={displayName} onChange={(e) => setDisplayName(e.target.value)} required placeholder={"Nome de usuário"}
+                           className={"w-full bg-blue-200/10 px-2 py-2 rounded-[5px]"}/>
                     <input value={email} onChange={(e) => setEmail(e.target.value)} required placeholder={"Email"}
                            type={"email"} className={"w-full bg-blue-200/10 px-2 py-2 rounded-[5px]"}/>
                     <input value={password} onChange={(e) => setPassword(e.target.value)} required placeholder={"Senha"}
