@@ -1,3 +1,5 @@
+import imgHero from '../assets/images/img-hero.svg'
+
 function Hero() {
     return (
         <>
@@ -23,7 +25,7 @@ function Hero() {
                         </div>
                     </div>
                     <div className={"hidden md:w-[50%] lg:block"}>
-                        <img className={"w-[100%]"} src={"/src/assets/images/img-hero.svg"}/>
+                        <img className={"w-[100%]"} src={imgHero}/>
                     </div>
                 </div>
             </section>
