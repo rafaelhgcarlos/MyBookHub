@@ -17,6 +17,8 @@ O **MyBookHub** é um projeto de gerenciamento de livros, com foco em ajudar os 
 ### Tecnologias Utilizadas
 
 <div>
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
   <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
   <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="Tailwind CSS" />
   <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
@@ -29,6 +31,7 @@ O **MyBookHub** é um projeto de gerenciamento de livros, com foco em ajudar os 
 - **Firebase**: Plataforma de backend como serviço, utilizada para autenticação e banco de dados.
 - **JavaScript**: Usado para a lógica da aplicação.
 - **CSS**: Para estilização da aplicação e garantir uma experiência visual agradável.
+- **HTML**: Linguagem de marcação usada para estruturar o conteúdo da aplicação.
 
 ## 🚀 Como Rodar o Projeto
 
