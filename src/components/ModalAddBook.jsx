@@ -14,14 +14,12 @@ function ModalAddBook({isOpen, setIsOpen, title, setTitle, description, setDescr
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     className="border p-2 rounded-md w-full mb-2"
-                    maxLength={20}
                 />
                 <textarea
                     placeholder="Descrição"
                     value={description}
                     onChange={(e) => setDescription(e.target.value)}
                     className="border p-2 rounded-md w-full mb-2"
-                    maxLength={25}
                 />
                 <div className="flex justify-between">
                     <button
