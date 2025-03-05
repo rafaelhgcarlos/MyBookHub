@@ -46,6 +46,7 @@ function Library() {
             fetchBooks();
         } else {
             setLoading(false);
+            setBooks([]);
         }
     }, [user]);
 
