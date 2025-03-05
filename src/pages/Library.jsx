@@ -169,7 +169,7 @@ function Library() {
                 />
 
                 {/* Exibir livros */}
-                <div className="container max-w-7xl mx-auto grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 mt-20">
+                <div className="container max-w-7xl mx-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 mt-20">
                     {loading ? (
                         <div>Carregando livros...</div>
                     ) : (
