@@ -25,7 +25,7 @@ function Hero() {
                         </div>
                     </div>
                     <div className={"hidden md:w-[50%] lg:block"}>
-                        <img className={"w-[100%]"} src={imgHero}/>
+                        <img className={"w-[100%]"} alt={"Img Hero"} src={imgHero}/>
                     </div>
                 </div>
             </section>
