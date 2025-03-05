@@ -1,6 +1,10 @@
 import imgHero from '../assets/images/img-hero.svg'
+import { useNavigate } from "react-router-dom";
 
 function Hero() {
+
+    const navigate = useNavigate();
+
     return (
         <>
 
@@ -18,7 +22,7 @@ function Hero() {
                                 fio
                                 da
                                 história. Simples, intuitivo&nbsp;e&nbsp;feito&nbsp;para&nbsp;você.</p>
-                            <button
+                            <button onClick={() => navigate("/library")}
                                 className={"pt-[10px] pr-[15px] pb-[10px] pl-[20px] rounded-[10px] bg-blue-600 text-white text-[18px] text-center hover:bg-[#0b83fa] transition duration-500"}>Get
                                 Started<i className="uil uil-arrow-circle-right ml-[5px] text-[18px]"></i>
                             </button>
