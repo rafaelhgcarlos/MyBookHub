@@ -17,11 +17,10 @@ O **MyBookHub** é um projeto de gerenciamento de livros, com foco em ajudar os 
 ### Tecnologias Utilizadas
 
 <div>
-  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
-  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-plain.svg" alt="Vite" />
-  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="Tailwind CSS" />
-  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
-  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="Tailwind CSS" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
 </div>
 
 - **React**: Biblioteca JavaScript para construção de interfaces de usuário interativas.
