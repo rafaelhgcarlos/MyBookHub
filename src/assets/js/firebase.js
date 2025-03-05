@@ -6,6 +6,9 @@ import {
     signOut,
     updateProfile
 } from "firebase/auth";
+import {getFirestore, doc, setDoc, getDoc, updateDoc, arrayUnion, arrayRemove} from "firebase/firestore";
+import {useEffect, useState} from "react";
+
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -19,6 +22,20 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+export const db = getFirestore(app);
+
+
+export const useAuth = () => {
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged(setUser);
+        return () => unsubscribe();
+    }, []);
+
+    return user;
+};
+
 
 export function cadastro(email, password, displayName) {
     return createUserWithEmailAndPassword(auth, email, password)
@@ -27,7 +44,11 @@ export function cadastro(email, password, displayName) {
             return updateProfile(user, {displayName: displayName})
                 .then(() => {
                     console.log('Usuário criado com nome:', user.displayName);
-                    return user;
+
+                    return setDoc(doc(db, "users", user.uid), {
+                        displayName: displayName,
+                    })
+
                 });
         })
         .catch((error) => {
@@ -50,4 +71,46 @@ export function login(email, password) {
 
 export function logout() {
     return signOut(auth);
+}
+
+export async function addBookToBacklog(book) {
+    const user = auth.currentUser;
+    if (user) {
+        const userDocRef = doc(db, "users", user.uid);
+
+        await updateDoc(userDocRef, {
+            backlog: arrayUnion(book)
+        });
+    } else {
+        throw new Error("Usuário não autenticado");
+    }
+}
+
+export async function getBacklog() {
+    const user = auth.currentUser;
+    if (user) {
+        const userDocRef = doc(db, "users", user.uid);
+        const userDoc = await getDoc(userDocRef);
+        if (userDoc.exists()) {
+            return userDoc.data().backlog || [];
+        } else {
+            throw new Error("Dados do usuário não encontrados");
+        }
+    } else {
+        throw new Error("Usuário não autenticado");
+    }
+}
+
+export async function removeBookFromBacklog(book) {
+    const user = auth.currentUser;
+    if (user) {
+        const userDocRef = doc(db, "users", user.uid);
+
+
+        await updateDoc(userDocRef, {
+            backlog: arrayRemove(book)
+        });
+    } else {
+        throw new Error("Usuário não autenticado");
+    }
 }
