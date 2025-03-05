@@ -16,7 +16,13 @@ O **MyBookHub** é um projeto de gerenciamento de livros, com foco em ajudar os 
 
 ### Tecnologias Utilizadas
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="React" width="100" height="100"> <img src="https://vitejs.dev/logo-with-shadow.png" alt="Vite" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" width="100" height="100"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Firebase_Logo.png" alt="Firebase" width="100" height="100">
+<div>
+  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-plain.svg" alt="Vite" />
+  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="Tailwind CSS" />
+  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
+  <img height="40em" width="45em" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+</div>
 
 - **React**: Biblioteca JavaScript para construção de interfaces de usuário interativas.
 - **Vite**: Ferramenta de build moderna e rápida para front-end, garantindo um desenvolvimento ágil.
