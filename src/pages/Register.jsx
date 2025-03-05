@@ -40,7 +40,11 @@ function Register() {
             .then(() => {
                 navigate("/");
             }).catch((error) => {
-            setError("Erro ao criar usuário: " + error.message);
+            if (error.message === 'Firebase: Error (auth/email-already-in-use).') {
+                setError("Email já cadastrado.");
+            } else {
+                setError(error.message);
+            }
         });
     };
 
