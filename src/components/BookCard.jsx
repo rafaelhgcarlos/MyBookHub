@@ -9,8 +9,8 @@ function BookCard({
                   }) {
     return (
         <div className="bg-blue-950/95 rounded-2xl shadow-lg p-4">
-            <h2 className="text-xl font-semibold">{book.title}</h2>
-            <p className="text-gray-500 mt-2">{book.description}</p>
+            <h2 className="text-xl font-semibold h-auto truncate">{book.title}</h2>
+            <p className="text-gray-500 mt-2 h-auto truncate">{book.description}</p>
             <div className="flex justify-between mt-4">
                 <button
                     onClick={() => {
