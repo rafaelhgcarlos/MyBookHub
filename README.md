@@ -33,25 +33,6 @@ O **MyBookHub** é um projeto de gerenciamento de livros, com foco em ajudar os 
 - **CSS**: Para estilização da aplicação e garantir uma experiência visual agradável.
 - **HTML**: Linguagem de marcação usada para estruturar o conteúdo da aplicação.
 
-## 🚀 Como Rodar o Projeto
-
-1. **Clone o repositório**:
-   ```sh
-   git clone 
-  https://github.com/rafaelhgcarlos/MyBookHub
-   cd mybookhub
-   ```
-2. **Instale as dependências**:
-   ```sh
-   npm install
-   ```
-3. **Execute o servidor de desenvolvimento**:
-   ```sh
-   npm run dev
-   ```
-
-O aplicativo estará disponível em `http://localhost:3000`.
-
 ## 🎯 Como Contribuir
 
 Contribuições são bem-vindas! Para participar:
