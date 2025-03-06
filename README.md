@@ -38,7 +38,7 @@ O **MyBookHub** é um projeto de gerenciamento de livros, com foco em ajudar os 
 1. **Clone o repositório**:
    ```sh
    git clone 
-https://github.com/rafaelhgcarlos/MyBookHub
+  https://github.com/rafaelhgcarlos/MyBookHub
    cd mybookhub
    ```
 2. **Instale as dependências**:
