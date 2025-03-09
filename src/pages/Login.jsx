@@ -56,7 +56,7 @@ function Login() {
                     <Link to="/newPassword" className={"text-start w-full text-blue-800"}>Esqueci minha senha</Link>
                     {error && <p className="text-red-500 mt-5 text-[13px] text-center">{error}</p>}
                     <button type={"submit"}
-                            className={"w-full mt-10 bg-blue-700 px-2 py-2 rounded-[5px] text-white"}>Logar
+                            className={"w-full mt-10 bg-blue-700 px-2 py-2 rounded-[5px] text-white cursor-pointer"}>Logar
                     </button>
                     <span className={"flex"}>Não tem uma conta?<Link to="/register" className={"ml-1 text-blue-800"}>Registro</Link> </span>
                 </form>

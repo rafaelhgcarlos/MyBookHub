@@ -71,7 +71,7 @@ function Register() {
                            className={"w-full bg-blue-200/10 px-2 py-2 rounded-[5px]"}/>
                     {error && <p className="text-red-500 mt-5">{error}</p>}
                     <button type={"submit"}
-                            className={"w-full mt-10 bg-blue-700 px-2 py-2 rounded-[5px] text-white"}>Registrar
+                            className={"w-full mt-10 bg-blue-700 px-2 py-2 rounded-[5px] text-white cursor-pointer"}>Registrar
                     </button>
                 </form>
             </div>

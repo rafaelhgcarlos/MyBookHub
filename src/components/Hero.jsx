@@ -23,7 +23,7 @@ function Hero() {
                                 da
                                 história. Simples, intuitivo&nbsp;e&nbsp;feito&nbsp;para&nbsp;você.</p>
                             <button onClick={() => navigate("/library")}
-                                className={"pt-[10px] pr-[15px] pb-[10px] pl-[20px] rounded-[10px] bg-blue-600 text-white text-[18px] text-center hover:bg-[#0b83fa] transition duration-500"}>Get
+                                className={"cursor-pointer pt-[10px] pr-[15px] pb-[10px] pl-[20px] rounded-[10px] bg-blue-600 text-white text-[18px] text-center hover:bg-[#0b83fa] transition duration-500"}>Get
                                 Started<i className="uil uil-arrow-circle-right ml-[5px] text-[18px]"></i>
                             </button>
                         </div>

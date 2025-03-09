@@ -24,13 +24,13 @@ function ModalAddBook({isOpen, setIsOpen, title, setTitle, description, setDescr
                 <div className="flex justify-between">
                     <button
                         onClick={handleAddBook}
-                        className="bg-green-500 text-white p-2 rounded-md"
+                        className="cursor-pointer bg-green-500 text-white p-2 rounded-md"
                     >
                         Adicionar
                     </button>
                     <button
                         onClick={() => setIsOpen(false)}
-                        className="bg-red-500 text-white p-2 rounded-md"
+                        className="cursor-pointer bg-red-500 text-white p-2 rounded-md"
                     >
                         Cancelar
                     </button>
