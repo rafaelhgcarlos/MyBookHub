@@ -22,6 +22,7 @@ function Library() {
     const [error, setError] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(true);
+    const [hoveredBookId, setHoveredBookId] = useState(null);
 
     const booksPerPage = 12;
 
@@ -122,13 +123,13 @@ function Library() {
     return (
         <>
             <Header />
-            <div className="min-h-screen container max-w-7xl mx-auto p-4 lg:p-0 mt-30">
+            <div className="min-h-screen container max-w-7xl mx-auto p-4 lg:p-0 mt-30 flex flex-col justify-center items-center">
                 <h1 className="text-2xl font-bold mb-10 text-center">Biblioteca de livros</h1>
                 {user ? (
                     <>
                         <button
                             onClick={() => setIsModalOpen(true)}
-                            className="bg-blue-500 text-white p-2 rounded-md"
+                            className="bg-blue-500 text-white p-2 rounded-md w-full sm:w-90 hover:bg-blue-600 cursor-pointer"
                         >
                             Adicione um livro
                         </button>
@@ -170,7 +171,7 @@ function Library() {
                 />
 
                 {/* Exibir livros */}
-                <div className="container max-w-7xl mx-auto grid grid-cols-1 gap-4 md:grid-cols-3 lg:grid-cols-4 mt-20">
+                <div className="container max-w-7xl mx-auto flex-col mt-20">
                     {loading ? (
                         <div>Carregando livros...</div>
                     ) : (
@@ -184,6 +185,9 @@ function Library() {
                                 setIsEditModalOpen={setIsEditModalOpen}
                                 setBookToDelete={setBookToDelete}
                                 setIsConfirmDeleteOpen={setIsConfirmDeleteOpen}
+                                isDimmed={hoveredBookId !== null && hoveredBookId !== book.id} // Aplica opacidade reduzida aos outros cards
+                                onMouseEnter={() => setHoveredBookId(book.id)} // Define o hover no card atual
+                                onMouseLeave={() => setHoveredBookId(null)} // Remove o hover quando o mouse sai
                             />
                         ))
                     )}
