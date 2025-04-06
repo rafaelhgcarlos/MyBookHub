@@ -5,6 +5,7 @@ interface ButtonProps {
     iconPosition?: 'left' | 'right'
     alone?: boolean
     onClick?: () => void
+    disabled?: boolean;
 }
 
 function Button({
@@ -14,6 +15,7 @@ function Button({
                     iconPosition,
                     alone,
                     onClick,
+                    disabled,
                 }: ButtonProps) {
     let buttonClass = ''
 
@@ -31,6 +33,7 @@ function Button({
         <button
             className={`${buttonClass} flex gap-1 font-normal leading-none tracking-normal text-center`}
             onClick={onClick}
+            disabled={disabled}
         >
             {iconName && (iconPosition === 'left' || alone) && (
                 <i className={`uil ${iconName}`}></i>
