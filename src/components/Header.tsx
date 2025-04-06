@@ -5,17 +5,17 @@ import Button from "./Button.tsx";
 import UserMenu from "./UserMenu.tsx";
 import UserMenuToggle from "./UserMenuToggle.tsx";
 import NavMenuMobile from "./NavMenuMobile.tsx";
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../assets/js/firebase.ts";
 
-interface NavMenuProps {
-    user: boolean;
-}
+export default function Header() {
 
-export default function Header({user}: NavMenuProps) {
+    const {user, handleLogout} = useAuth();
+    const navigate = useNavigate();
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const [userMenuOpen, setUserMenuOpen] = useState(false)
-    const [mockUser, setMockUser] = useState(false)
 
     function toggleMenu() {
         setIsMenuOpen(!isMenuOpen)
@@ -30,22 +30,12 @@ export default function Header({user}: NavMenuProps) {
         console.log('userMenuOpen:', !userMenuOpen) // Debugging
     }
 
-    function toggleMockedUser() {
-        setMockUser(!mockUser)
-    }
-
     function handleResize() {
         if (window.innerWidth > 768) {
             setIsMenuOpen(false)
         }
     }
 
-    function handleLogout() {
-        setMockUser(false);
-        setUserMenuOpen(false);
-        console.log("User logged out");
-        // Debugging
-    }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -80,44 +70,44 @@ export default function Header({user}: NavMenuProps) {
                         </button>
                     </div>
                     <div className="hidden md:flex">
-                        <NavMenu/>
+                        <NavMenu user={user}/>
                     </div>
-                    <div className="hidden md:flex items-center justify-end gap-4">
+                    <div className="hidden md:flex items-center justify-end text-xl">
                         {user ? (
                             <div>
                                 <UserMenuToggle
                                     toggleUserMenu={toggleUserMenu}
-                                    mockedUserName={'Rafael Gonzaga'}
+                                    mockedUserName={user?.displayName || "Usuário"}
                                     userMenuOpen={userMenuOpen}
                                 />
 
                                 <UserMenu
+                                    user={user}
                                     userMenuOpen={userMenuOpen}
                                     onLogout={handleLogout}
                                 />
                             </div>
                         ) : (
-                            <>
+                            <div className={'flex items-center justify-end gap-4 sm:text-sm lg:text-lg'}>
                                 <Button
                                     style={'secondary'}
                                     label={'Sign in'}
-                                    onClick={toggleMockedUser}
+                                    onClick={() => navigate("/login")}
                                 />
                                 <Button
                                     style={'primary'}
                                     label={'Sign up'}
-                                    onClick={toggleMockedUser}
+                                    onClick={() => navigate("/register")}
                                 />
-                            </>
+                            </div>
                         )}
                     </div>
                 </div>
                 <NavMenuMobile
-                    user={mockUser}
+                    user={user}
                     toggleUserMenu={toggleUserMenu}
                     isMenuOpen={isMenuOpen}
                     userMenuOpen={userMenuOpen}
-                    toggleMockedUser={toggleMockedUser}
                 />
             </div>
         </header>
