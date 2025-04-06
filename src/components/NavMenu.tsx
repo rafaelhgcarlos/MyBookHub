@@ -1,6 +1,10 @@
 import NavLinks from "./NavLinks";
 
-export default function NavMenu() {
+interface NavMenuProps {
+    user?: any
+}
+
+export default function NavMenu({}: NavMenuProps) {
     return (
         <>
             <nav

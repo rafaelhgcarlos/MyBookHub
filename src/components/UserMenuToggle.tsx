@@ -22,7 +22,7 @@ function UserMenuToggle({
                 <img
                     src={angleDown}
                     alt="User menu arrow button"
-                    className={`size-3 text-white transition-transform transform duration-300 ${userMenuOpen ? 'rotate-180' : 'rotate-0'}`}
+                    className={`size-4 text-white transition-transform transform duration-300 ${userMenuOpen ? 'rotate-180' : 'rotate-0'}`}
                 />
             </button>
         </>

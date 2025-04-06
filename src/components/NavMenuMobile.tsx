@@ -2,22 +2,24 @@ import NavLinks from './NavLinks.tsx'
 import UserMenuToggle from './UserMenuToggle.tsx'
 import Button from './Button.tsx'
 import UserMenu from './UserMenu.tsx'
+import { User } from "firebase/auth";
+import {useAuth} from "../assets/js/firebase.ts";
+import {useNavigate} from "react-router-dom";
 
 interface NavMenuProps {
-    user: boolean
+    user: User | null
     isMenuOpen: boolean
     userMenuOpen: boolean
     toggleUserMenu: () => void
-    toggleMockedUser: () => void
 }
 
 function NavMenuMobile({
-                           user,
                            isMenuOpen,
                            userMenuOpen,
                            toggleUserMenu,
-                           toggleMockedUser,
                        }: NavMenuProps) {
+    const navigate = useNavigate();
+    const {user, handleLogout} = useAuth();
     return (
         <>
             <nav
@@ -39,31 +41,34 @@ function NavMenuMobile({
 
                 <div className="flex items-center text-center gap-6 py-4">
                     {user ? (
-                        <div className="mx-auto text-lg">
-                            <UserMenuToggle
-                                toggleUserMenu={toggleUserMenu}
-                                mockedUserName={'Rafael Gonzaga'}
-                                userMenuOpen={userMenuOpen}
-                            />
-                        </div>
+                        <>
+                            <div className="mx-auto text-lg">
+                                <UserMenuToggle
+                                    toggleUserMenu={toggleUserMenu}
+                                    mockedUserName={user?.displayName || "Usuário"}
+                                    userMenuOpen={userMenuOpen}
+                                />
+                            </div>
+                        </>
                     ) : (
                         <>
                             <Button
                                 style={'secondary'}
                                 label={'Sign in'}
-                                onClick={toggleMockedUser}
+                                onClick={() => navigate("/login")}
                             />
                             <Button
                                 style={'primary'}
                                 label={'Sign up'}
-                                onClick={toggleMockedUser}
+                                onClick={() => navigate("/register")}
                             />
                         </>
                     )}
                 </div>
                 <UserMenu
+                    user={user}
                     userMenuOpen={userMenuOpen}
-                    onLogout={toggleMockedUser}
+                    onLogout={handleLogout}
                 />
             </nav>
         </>
