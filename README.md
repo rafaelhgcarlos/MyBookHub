@@ -1,54 +1,48 @@
-# React + TypeScript + Vite
+# MyBookHub 📚
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Organize your book backlog in a simple and efficient way!**
 
-Currently, two official plugins are available:
+## 📖 About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**MyBookHub** is a book management project designed to help users organize and keep track of the books they want to read. The goal is to provide a practical, intuitive, and responsive interface for adding, sorting, and filtering books with ease.
 
-## Expanding the ESLint configuration
+### ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+✅ Add books to your backlog  
+✅ Mark books as read or pending  
+✅ Filter by author, category, and reading status  
+✅ Dynamic search to quickly find books  
+✅ Responsive interface for mobile and desktop devices
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🛠 Technologies Used
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+<div>
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" alt="Tailwind CSS" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase" />
+  <img height="100em" width="100" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+</div>
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **React**: JavaScript library for building dynamic user interfaces.  
+- **Vite**: Fast and modern front-end build tool for an optimized dev experience.  
+- **Tailwind CSS**: Utility-first CSS framework for fast and customizable styling.  
+- **Firebase**: Used for user authentication and real-time database storage.  
+- **JavaScript**: Main language for application logic and interactivity.  
+- **CSS**: Additional styling to enhance the visual experience.  
+- **HTML**: Semantic structure of the application.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 🤝 How to Contribute
+
+Contributions are welcome! To contribute:
+
+1. **Fork this repository**  
+2. **Create a new branch for your feature**  
+3. **Make your changes and commit**  
+4. **Push to your branch**  
+5. **Open a pull request explaining your updates**
+
+## 📜 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
