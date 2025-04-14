@@ -29,7 +29,7 @@
 - **Vite**: Fast and modern front-end build tool for an optimized dev experience.  
 - **Tailwind CSS**: Utility-first CSS framework for fast and customizable styling.  
 - **Firebase**: Used for user authentication and real-time database storage.  
-- **JavaScript**: Main language for application logic and interactivity.  
+- **TypeScript**: Main language for application logic and interactivity.  
 - **CSS**: Additional styling to enhance the visual experience.  
 - **HTML**: Semantic structure of the application.
 
