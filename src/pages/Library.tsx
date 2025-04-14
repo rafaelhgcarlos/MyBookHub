@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {motion} from "framer-motion";
 import Header from "../components/Header.tsx";
-import Button from "../components/Button.tsx";
+import Button from "../components/Button/Button.tsx";
 
 interface Book {
     id: string;
@@ -116,7 +116,7 @@ export default function BookSearch() {
                                 <Button
                                     style="secondary"
                                     label="Previous"
-                                    disabled={currentPage === 0}
+                                    state={currentPage === 0 ? "disabled" : "enabled"}
                                     onClick={() => {
                                         const prev = Math.max(0, currentPage - 1);
                                         setCurrentPage(prev);
@@ -126,7 +126,7 @@ export default function BookSearch() {
                                 <Button
                                     style="primary"
                                     label="Next"
-                                    disabled={!hasMorePages}
+                                    state={!hasMorePages ? "disabled": "enabled"}
                                     onClick={() => {
                                         const next = currentPage + 1;
                                         setCurrentPage(next);

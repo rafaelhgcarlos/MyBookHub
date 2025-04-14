@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react"
 import logoIMG from '../assets/images/logo.png'
 import NavMenu from "./NavMenu.tsx";
-import Button from "./Button.tsx";
+import Button from "./Button/Button.tsx";
 import UserMenu from "./UserMenu.tsx";
 import UserMenuToggle from "./UserMenuToggle.tsx";
 import NavMenuMobile from "./NavMenuMobile.tsx";
