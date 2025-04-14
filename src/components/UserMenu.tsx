@@ -1,5 +1,5 @@
 import NavLinks from './NavLinks.tsx'
-import Button from "./Button.tsx";
+import Button from "./Button/Button.tsx";
 import { User } from "firebase/auth";
 
 

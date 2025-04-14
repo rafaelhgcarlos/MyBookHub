@@ -1,6 +1,6 @@
 import Header from "../components/Header.tsx";
 import {DotLottieReact} from '@lottiefiles/dotlottie-react';
-import Button from "../components/Button.tsx";
+import Button from "../components/Button/Button.tsx";
 import {useNavigate} from "react-router-dom";
 
 function Home() {

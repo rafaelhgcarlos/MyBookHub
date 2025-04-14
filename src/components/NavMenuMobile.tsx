@@ -1,6 +1,6 @@
 import NavLinks from './NavLinks.tsx'
 import UserMenuToggle from './UserMenuToggle.tsx'
-import Button from './Button.tsx'
+import Button from './Button/Button.tsx'
 import UserMenu from './UserMenu.tsx'
 import { User } from "firebase/auth";
 import {useAuth} from "../assets/js/firebase.ts";
